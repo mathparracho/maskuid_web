@@ -1,0 +1,30 @@
+* 
+{
+    pborder: 1px solid red;
+    
+}
+
+html {
+    background-color: #242424;
+    background-size: cover;
+    background-repeat: no-repeat;
+      background-attachment: fixed;
+  }
+
+div
+{
+
+}
+
+.logo {
+    max-width: 100px; /* Define o tamanho máximo do logo */
+    height: auto; /* Mantém a proporção original da imagem */
+  }
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajuste conforme necessário */
+  }
