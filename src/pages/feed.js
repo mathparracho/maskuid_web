@@ -15,7 +15,7 @@ import {
   Logo,
   Botao
 } from "../styles/StyledFeed"; // Import from your StyledComponents.js file
-import AdSense from 'react-adsense';
+import AdsComponent from '../components/AdsComponent';
 
 const BASE_URL = "https://maskuidserverteste-rewmb5ojna-rj.a.run.app";
 
@@ -220,10 +220,7 @@ const PostItem = ({ post, handleLike, handleDislike, isLiked, isDisliked }) => {
       />
       <TituloFeed>Segredos por perto:</TituloFeed>
 
-      <AdSense.Google
-      client="ca-pub-7346272713414603"
-      slot="2192186203"
-      />
+      <AdsComponent dataAdSlot='2192186203' />
 
 
 {loading ? (
