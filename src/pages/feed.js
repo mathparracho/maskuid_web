@@ -15,6 +15,7 @@ import {
   Logo,
   Botao
 } from "../styles/StyledFeed"; // Import from your StyledComponents.js file
+import AdSense from 'react-adsense';
 
 const BASE_URL = "https://maskuidserverteste-rewmb5ojna-rj.a.run.app";
 
@@ -26,6 +27,7 @@ export const Feed = () => {
   const [dislikedPosts, setDislikedPosts] = useState(
     JSON.parse(localStorage.getItem("dislikedPosts")) || []
   );
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // ... (your getUserLocation and fetching posts logic)
@@ -60,6 +62,7 @@ export const Feed = () => {
               .post(`${BASE_URL}/post/getPosts`, newPost) // Substitua "endpoint" pela rota correta
               .then((response) => {
                 setPosts(response.data); // Atualiza o estado com a lista de JSON recebida
+                setLoading(false);
               })
               .catch((error) => {
                 console.error("Erro ao fazer a requisição POST:", error);
@@ -217,18 +220,30 @@ const PostItem = ({ post, handleLike, handleDislike, isLiked, isDisliked }) => {
       />
       <TituloFeed>Segredos por perto:</TituloFeed>
 
-        {[...posts].reverse().map((item, index) => (
-          <li key={index}>
-            <PostItem
-              post={item}
-              handleLike={() => handleLike(item)}
-              handleDislike={() => handleDislike(item)}
-              isLiked={likedPosts.includes(item._id)}
-              isDisliked={dislikedPosts.includes(item._id)}
-              // Pass your like/dislike handlers, isLiked, and isDisliked props here
-            />
-          </li>
-        ))}
+      <AdSense.Google
+      client="ca-pub-7346272713414603"
+      slot="2192186203"
+      />
+
+
+{loading ? (
+        <TituloFeed>Carregando...</TituloFeed>
+      ) : (
+        <div>
+          {[...posts].reverse().map((item, index) => (
+            <li key={index}>
+              <PostItem
+                post={item}
+                handleLike={() => handleLike(item)}
+                handleDislike={() => handleDislike(item)}
+                isLiked={likedPosts.includes(item._id)}
+                isDisliked={dislikedPosts.includes(item._id)}
+                // Pass your like/dislike handlers, isLiked, and isDisliked props here
+              />
+            </li>
+          ))}
+        </div>
+      )}
 
     </Container>
 
