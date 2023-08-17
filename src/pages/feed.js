@@ -223,22 +223,28 @@ const PostItem = ({ post, handleLike, handleDislike, isLiked, isDisliked }) => {
       <AdsComponent dataAdSlot='2192186203' />
 
 
-{loading ? (
+        {loading ? (
         <TituloFeed>Carregando...</TituloFeed>
       ) : (
         <div>
-          {[...posts].reverse().map((item, index) => (
-            <li key={index}>
-              <PostItem
-                post={item}
-                handleLike={() => handleLike(item)}
-                handleDislike={() => handleDislike(item)}
-                isLiked={likedPosts.includes(item._id)}
-                isDisliked={dislikedPosts.includes(item._id)}
-                // Pass your like/dislike handlers, isLiked, and isDisliked props here
-              />
-            </li>
-          ))}
+          {posts.length === 0 ? ( // Check if posts array is empty
+            <TituloFeed>Nenhum segredo ainda...</TituloFeed>
+          ) : (
+            <div>
+              {[...posts].reverse().map((item, index) => (
+                <li key={index}>
+                  <PostItem
+                    post={item}
+                    handleLike={() => handleLike(item)}
+                    handleDislike={() => handleDislike(item)}
+                    isLiked={likedPosts.includes(item._id)}
+                    isDisliked={dislikedPosts.includes(item._id)}
+                    // Pass your like/dislike handlers, isLiked, and isDisliked props here
+                  />
+                </li>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
