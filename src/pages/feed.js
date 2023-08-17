@@ -220,7 +220,7 @@ const PostItem = ({ post, handleLike, handleDislike, isLiked, isDisliked }) => {
       />
       <TituloFeed>Segredos por perto:</TituloFeed>
 
-      <AdsComponent dataAdSlot='2192186203' />
+      
 
 
         {loading ? (
@@ -247,6 +247,8 @@ const PostItem = ({ post, handleLike, handleDislike, isLiked, isDisliked }) => {
           )}
         </div>
       )}
+
+    <AdsComponent dataAdSlot='2192186203' />
 
     </Container>
 
