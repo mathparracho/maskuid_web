@@ -57,7 +57,6 @@ export const NovoPost = () => {
     })
       .then(response => response.json())
       .then(result => {
-        console.log('Post criado:', result);
         window.alert('Segredo postado com sucesso!');
         navigate('/');
       })
