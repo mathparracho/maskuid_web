@@ -40,7 +40,7 @@ export const NovoPost = () => {
 
 
   const submitPost = () => {
-    const url = 'http://34.95.184.183:3001/post'; // URL do endpoint da API
+    const url = 'https://maskuidserverteste-rewmb5ojna-rj.a.run.app/post'; // URL do endpoint da API
 
     const data = {
       lat: location.latitude,

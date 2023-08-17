@@ -16,7 +16,7 @@ import {
   Botao
 } from "../styles/StyledFeed"; // Import from your StyledComponents.js file
 
-const BASE_URL = "http://34.95.184.183:3001";
+const BASE_URL = "https://maskuidserverteste-rewmb5ojna-rj.a.run.app";
 
 export const Feed = () => {
   const [posts, setPosts] = useState([]);
