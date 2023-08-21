@@ -66,15 +66,18 @@ export const Feed = () => {
               })
               .catch((error) => {
                 console.error("Erro ao fazer a requisição POST:", error);
+                window.alert('Erro com servidor!');
               });
           },
           (error) => {
             console.error("Erro ao obter a localização:", error);
+            window.alert('Erro ao detectar localização!');
           },
           options
         );
       } else {
         console.error("Geolocalização não suportada pelo navegador.");
+        window.alert('Erro com sua localização!');
       }
     };
     getUserLocation();
