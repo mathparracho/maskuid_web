@@ -42,7 +42,7 @@ export const Feed = () => {
       const options = {
         maximumAge: 0, // Maximum age of cached position: 5 minutes
         timeout: 10000, // Timeout after 10 seconds
-        enableHighAccuracy: true, // Request high accuracy position
+        enableHighAccuracy: false, // Request high accuracy position
       };
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
