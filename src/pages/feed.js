@@ -20,6 +20,7 @@ import AdsComponent from '../components/AdsComponent';
 const BASE_URL = "https://maskuidserverteste-rewmb5ojna-rj.a.run.app";
 
 export const Feed = () => {
+  const [adLoaded, setAdLoaded] = useState(false);
   const [posts, setPosts] = useState([]);
   const [likedPosts, setLikedPosts] = useState(
     JSON.parse(localStorage.getItem("likedPosts")) || []
@@ -28,6 +29,27 @@ export const Feed = () => {
     JSON.parse(localStorage.getItem("dislikedPosts")) || []
   );
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!adLoaded) {
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.innerHTML = `
+        atOptions = {
+          'key' : '230ab6a041c157b07091f3616649851e',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitablecreativeformat.com/230ab6a041c157b07091f3616649851e/invoke.js"></scr' + 'ipt>');
+      `;
+      document.body.appendChild(script);
+      setAdLoaded(true);
+    }
+  }, [adLoaded]);
+  
+
 
   useEffect(() => {
     // ... (your getUserLocation and fetching posts logic)
@@ -246,7 +268,14 @@ const PostItem = ({ post, handleLike, handleDislike, isLiked, isDisliked }) => {
                   />
                 </li>
               ))}
+    {adLoaded && (
+      <div>
+        {/* Espaço para o anúncio */}
+        <div id="adSpace"></div>
+      </div>
+    )}
             </div>
+            
           )}
         </div>
       )}
