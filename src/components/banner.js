@@ -29,7 +29,8 @@ export default function Banner() {
 
     const containerStyle = {
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: '10px'
     };
 
     return (
