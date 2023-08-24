@@ -16,6 +16,8 @@ import {
   Botao
 } from "../styles/StyledFeed"; // Import from your StyledComponents.js file
 import AdsComponent from '../components/AdsComponent';
+import { Helmet } from "react-helmet";
+import Banner from "../components/banner";
 
 const BASE_URL = "https://maskuidserverteste-rewmb5ojna-rj.a.run.app";
 
@@ -251,10 +253,11 @@ const PostItem = ({ post, handleLike, handleDislike, isLiked, isDisliked }) => {
               ))}
             </div>
             
+            
           )}
         </div>
       )}
-
+    <Banner></Banner>
     <AdsComponent dataAdSlot='2192186203' />
     </Container>
 
