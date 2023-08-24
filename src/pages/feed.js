@@ -17,7 +17,7 @@ import {
 } from "../styles/StyledFeed"; // Import from your StyledComponents.js file
 import AdsComponent from '../components/AdsComponent';
 import { Helmet } from "react-helmet";
-import Banner from "../components/banner2";
+import Banner from "../components/banner";
 
 const BASE_URL = "https://maskuidserverteste-rewmb5ojna-rj.a.run.app";
 

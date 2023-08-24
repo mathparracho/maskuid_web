@@ -27,5 +27,16 @@ export default function Banner() {
         }
     }, []);
 
-    return <div ref={banner}></div>;
+    const containerStyle = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh', // Ensures the container takes up the full viewport height
+    };
+
+    return (
+        <div style={containerStyle}>
+            <div ref={banner}></div>
+        </div>
+    );
 }
