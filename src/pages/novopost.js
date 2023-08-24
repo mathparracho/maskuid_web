@@ -8,6 +8,7 @@ import {
   SubmitBtn,
   SubmitBtnText,
 } from "../styles/StyledPost";
+import Banner from "../components/banner";
 
 
 export const NovoPost = () => {
@@ -91,6 +92,7 @@ export const NovoPost = () => {
       <SubmitBtn onClick={submitPost}>
         <SubmitBtnText>Postar!</SubmitBtnText>
       </SubmitBtn>
+      <Banner></Banner>
     </Container>
 
       
