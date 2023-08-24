@@ -29,9 +29,7 @@ export default function Banner() {
 
     const containerStyle = {
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh', // Ensures the container takes up the full viewport height
+        justifyContent: 'center'
     };
 
     return (
